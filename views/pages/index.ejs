@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body class="h-100">
+    <%- include('../partials/header'); %>
+
+    <main class="container main-content">
+        <div class="jumbotron-ls">
+            <div class="row">
+                <div class="col-12">
+                    <img class="img-news mg-auto" src="data:image/png;base64,<%= img_url %>">
+                </div>
+            </div>
+        </div>
+        <div class="btn-group">
+            <% if ((pages - 1) === 0) { %>
+                
+            <% } else { %>
+                <a href="/index/<%= pages - 1 %> " class=" btn-primary btn-lg btn-wd">Pev</a>
+            <% } %>
+            <a href="/index/<%= pages + 1 %> " style="margin-left: auto;" class="btn-primary btn-lg btn-wd">Next</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+    <%- include('../partials/footer'); %>
+    </footer>
+</body>
+</html>
