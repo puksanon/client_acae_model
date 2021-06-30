@@ -8,7 +8,7 @@
     "dev": "nodemon server.js"
   },
   "dependencies": {
-    "@dcae_client/dcae_decoder": "1.0.8",
+    "@dcae_client/dcae_decoder": "1.0.9",
     "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",

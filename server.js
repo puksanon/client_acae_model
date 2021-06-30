@@ -6,7 +6,10 @@ const bodyParser = require('body-parser');
 const moment = require('moment')
 app.locals.moment = moment;
 const axios = require("axios");
-const acae = require("@dcae_client/dcae_decoder");
+
+//import image_decoder model
+const image_decoder = require("@dcae_client/dcae_decoder");
+
 // template engine  
 app.use(express.static('public'))
 app.set('view engine','ejs')
@@ -22,14 +25,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 const cors = require('cors');
 app.use(cors());
 
-function toBuffer(ab) {
-    var buf = Buffer.alloc(ab.byteLength);
-    var view = new Uint8Array(ab);
-    for (var i = 0; i < buf.length; ++i) {
-        buf[i] = view[i];
-    }
-    return buf;
-}
 
 app.get('/',async function(req, res) {
     res.redirect('/index/1')  
@@ -37,9 +32,14 @@ app.get('/',async function(req, res) {
 
 app.get('/index/:pages',async function(req, res) {
     var pages = req.params.pages || 1
-    const buffer    = await axios.get('http://127.0.0.1:8000/', {responseType: 'arraybuffer'})
-    const ch        = await toBuffer(buffer.data)
-    const base64    = await acae.decode(ch)
+    
+    //get byte data from API
+    const byte          = await axios.get(`http://127.0.0.1:8000/images/${pages}`, {responseType: 'arraybuffer'})
+    //convert byte data to buffer Uint8Array
+    const buffer_data   = await image_decoder.converttoBuffer(byte.data)
+    //decode buffer_data to base64
+    const base64        = await image_decoder.decode(buffer_data)
+
     res.render('pages/index' ,{ img_url: base64, pages : parseInt(pages) })  
 });
 

@@ -9,8 +9,17 @@
     <main class="container main-content">
         <div class="jumbotron-ls">
             <div class="row">
-                <div class="col-12">
+                <div class="col-sm-6">
                     <img class="img-news mg-auto" src="data:image/png;base64,<%= img_url %>">
+                    <div class="origin-tl mt-3">
+                        <h5>ACAE Composser Decode</h5>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <img class="img-news mg-auto" src="../image/<%= pages %>.jpg">
+                    <div class="origin-tl mt-3">
+                        <h5>Original File (.JPG)</h5>
+                    </div>
                 </div>
             </div>
         </div>
@@ -18,9 +27,10 @@
             <% if ((pages - 1) === 0) { %>
                 
             <% } else { %>
-                <a href="/index/<%= pages - 1 %> " class=" btn-primary btn-lg btn-wd">Pev</a>
+                <a href="/index/<%= pages - 1 %> " class=" btn-cl btn-lg btn-wd">Pev</a>
             <% } %>
-            <a href="/index/<%= pages + 1 %> " style="margin-left: auto;" class="btn-primary btn-lg btn-wd">Next</a>
+
+            <a href="/index/<%= pages + 1 %> " style="margin-left: auto;" class="btn-cl btn-lg btn-wd">Next</a>
         </div>
     </main>
 

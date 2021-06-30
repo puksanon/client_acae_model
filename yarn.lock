@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@dcae_client/dcae_decoder@1.0.8":
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/@dcae_client/dcae_decoder/-/dcae_decoder-1.0.8.tgz#77a071490d9305a96c2f322560c73e5ff9b5311f"
-  integrity sha512-5d81pMA3Mxp1iI5ytbGT7JXFbtcP4DaKPuIYDRIi6QnemHIQ/qA8rmju9jiKv0fGMCeU6TU1AQY4J1gYuLQ65w==
+"@dcae_client/dcae_decoder@1.0.9":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@dcae_client/dcae_decoder/-/dcae_decoder-1.0.9.tgz#a52d4600aa65e90ee793004e856e821d98361a7b"
+  integrity sha512-gU2AnBoADToe/TUUPop0D0EDV343ItwBnbAIj53D3n4PPuIPDNtWeabHxlNupUXfgSL/WIr4eGRq3dR64CH8yw==
   dependencies:
     "@tensorflow/tfjs" "^3.7.0"
     "@tensorflow/tfjs-node" "^3.7.0"
